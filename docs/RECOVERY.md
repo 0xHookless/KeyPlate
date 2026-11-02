@@ -4,7 +4,8 @@ You need three things:
 
 1. **Your Google account**, the one that ran Google Drive for desktop on the old PC.
 2. **Both passwords, in order.**
-3. **The Keyplate installer.** It is in `My Drive\Keyplate\installer\` (or in the GitHub releases, if you set that up).
+3. **The Keyplate installer.** It is in `My Drive\Keyplate\installer\`, or on the
+   [GitHub releases page](https://github.com/0xHookless/KeyPlate/releases/latest).
 
 ## Steps
 

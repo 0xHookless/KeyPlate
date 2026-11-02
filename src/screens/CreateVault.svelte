@@ -103,7 +103,7 @@
     <ol class="steps" aria-label="Steps">
       {#each steps as label, i (label)}
         <li class:done={i < step} class:current={i === step} aria-current={i === step ? "step" : undefined}>
-          <span class="n mono">{i < step ? "✓" : i + 1}</span>
+          <span class="n mono">{#if i < step}<Icon name="check" size={14} />{:else}{i + 1}{/if}</span>
           {label}
         </li>
       {/each}

@@ -10,31 +10,34 @@ const SAMPLE_WORDS = [
   "doctor", "legal", "letter", "sausage", "thank", "useful", "vote", "wave", "winner", "worth",
   "wrong", "year", "yellow", "zoo", "copper", "lantern", "orbit", "violin", "harbor", "ember",
 ];
+const ART24 = [...Array(23).fill("abandon"), "art"].join(" ");
 const VALID = new Set([
   "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
   "legal winner thank year wave sausage worth useful legal winner thank yellow",
   "letter advice cage absurd amount doctor acoustic avoid letter advice cage above",
   "zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo wrong",
+  ART24,
 ]);
 
 const day = 86_400_000;
 const now = Date.now();
+// Every seed below is a public BIP39 test vector: valid checksums, no funds.
 let entries: EntryDetail[] = [
   {
     id: "demo-1",
     kind: "seed",
-    title: "Hardware wallet (test vector)",
+    title: "Hardware wallet",
     words: "legal winner thank year wave sausage worth useful legal winner thank yellow".split(" "),
     bip39Passphrase: null,
     network: "Bitcoin",
-    body: "Public BIP39 test vector, for previews only.",
+    body: "Demo entry. These words are a public BIP39 test vector.",
     created: now - 40 * day,
     updated: now - 3 * day,
   },
   {
     id: "demo-2",
     kind: "seed",
-    title: "Mobile wallet (test vector)",
+    title: "Phone wallet",
     words: "letter advice cage absurd amount doctor acoustic avoid letter advice cage above".split(" "),
     bip39Passphrase: "demo-passphrase",
     network: "Ethereum",
@@ -43,13 +46,24 @@ let entries: EntryDetail[] = [
     updated: now - 20 * day,
   },
   {
+    id: "demo-4",
+    kind: "seed",
+    title: "Cold storage",
+    words: ART24.split(" "),
+    bip39Passphrase: null,
+    network: "Bitcoin",
+    body: "",
+    created: now - 90 * day,
+    updated: now - 60 * day,
+  },
+  {
     id: "demo-3",
     kind: "note",
     title: "Exchange recovery codes",
     words: [],
     bip39Passphrase: null,
     network: null,
-    body: "Placeholder text for the design preview.\nLine two of the note.",
+    body: "Demo note for the design preview.\nAny private text can live here.",
     created: now - 10 * day,
     updated: now - 1 * day,
   },
@@ -83,8 +97,11 @@ function summary(e: EntryDetail) {
   };
 }
 
+// A rough stand-in for zxcvbn. Hyphenated word passphrases count 11 bits per word, like the
+// real generator, so previews never overstate strength.
 function bits(p: string): number {
   if (!p) return 0;
+  if (/^[a-z]+(-[a-z]+)+$/.test(p)) return p.split("-").length * 11;
   const classes = [/[a-z]/, /[A-Z]/, /\d/, /[^a-zA-Z\d]/].filter((r) => r.test(p)).length;
   return Math.min(140, p.length * (1.6 + classes * 0.7));
 }
