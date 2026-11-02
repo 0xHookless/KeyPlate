@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = ["crates/vault-core", "src-tauri"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+# Argon2id is unbearably slow without optimisation, so keep it fast in debug builds too.
+[profile.dev.package.argon2]
+opt-level = 3
+[profile.dev.package.blake2]
+opt-level = 3
+[profile.dev.package.chacha20poly1305]
+opt-level = 3
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true

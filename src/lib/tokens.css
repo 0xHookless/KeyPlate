@@ -1,0 +1,150 @@
+/* Steel Plate. Every color, font, size and space the UI uses lives here. */
+
+:root {
+  /* Brand */
+  --plate: #eef0f2;
+  --ink: #14181f;
+  --graphite: #1b2027;
+  --cobalt: #2448c9;
+  --verdigris: #2f7d6b;
+  --seal: #b42318;
+
+  /* Surfaces and lines */
+  --surface: var(--plate);
+  --surface-raised: #f8f9fa;
+  --surface-sunk: #e3e6ea;
+  --line: #cfd4db;
+  --line-strong: #a9b0ba;
+  --text: var(--ink);
+  --text-2: #444c58;
+  --text-3: #5b6370;
+
+  /* Accent and states */
+  --accent: var(--cobalt);
+  --accent-hover: #1c3aa6;
+  --accent-tint: #e2e7f9;
+  --on-accent: #ffffff;
+  --ok: var(--verdigris);
+  --ok-tint: #dcede8;
+  --danger: var(--seal);
+  --danger-hover: #93190f;
+  --danger-tint: #f7e0dd;
+  --caution: #845400;
+  --caution-tint: #f5ead3;
+
+  /* The plate */
+  --plate-bed: #dde1e6;
+  --plate-edge: #b7bec7;
+  --cell: #f6f7f9;
+  --cell-edge: #c3c9d1;
+  --cell-highlight: #ffffff;
+  --cell-shade: #d2d7de;
+  --rivet: #a3abb6;
+
+  /* Type */
+  --font-ui: "Public Sans Variable", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Martian Mono Variable", "Cascadia Mono", Consolas, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.3125rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+  --leading-tight: 1.2;
+  --leading: 1.5;
+
+  /* Space (4pt rhythm) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --gutter: 16px;
+  --measure: 62ch;
+
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --control-h: 40px;
+
+  /* Elevation: borders first, one soft shadow for overlays */
+  --shadow-overlay: 0 12px 32px rgb(20 24 31 / 0.18), 0 2px 6px rgb(20 24 31 / 0.08);
+
+  /* Motion */
+  --dur-fast: 150ms;
+  --dur: 200ms;
+  --dur-slow: 250ms;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --focus-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: var(--graphite);
+    --surface-raised: #232a33;
+    --surface-sunk: #151a20;
+    --line: #343c47;
+    --line-strong: #4b5462;
+    --text: #e6e9ed;
+    --text-2: #bcc3cc;
+    --text-3: #949daa;
+    --accent: #8fa6f7;
+    --accent-hover: #aabbf9;
+    --accent-tint: #252f4b;
+    --on-accent: #10141a;
+    --ok: #6cc3ae;
+    --ok-tint: #1c322d;
+    --danger: #f2877b;
+    --danger-hover: #f6a69c;
+    --danger-tint: #3b2220;
+    --caution: #e3b65c;
+    --caution-tint: #382e1c;
+    --plate-bed: #12161b;
+    --plate-edge: #2e3540;
+    --cell: #242b34;
+    --cell-edge: #3a4350;
+    --cell-highlight: #2f3742;
+    --cell-shade: #161b21;
+    --rivet: #4a5361;
+    --shadow-overlay: 0 12px 32px rgb(0 0 0 / 0.45), 0 2px 6px rgb(0 0 0 / 0.3);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --surface: var(--graphite);
+  --surface-raised: #232a33;
+  --surface-sunk: #151a20;
+  --line: #343c47;
+  --line-strong: #4b5462;
+  --text: #e6e9ed;
+  --text-2: #bcc3cc;
+  --text-3: #949daa;
+  --accent: #8fa6f7;
+  --accent-hover: #aabbf9;
+  --accent-tint: #252f4b;
+  --on-accent: #10141a;
+  --ok: #6cc3ae;
+  --ok-tint: #1c322d;
+  --danger: #f2877b;
+  --danger-hover: #f6a69c;
+  --danger-tint: #3b2220;
+  --caution: #e3b65c;
+  --caution-tint: #382e1c;
+  --plate-bed: #12161b;
+  --plate-edge: #2e3540;
+  --cell: #242b34;
+  --cell-edge: #3a4350;
+  --cell-highlight: #2f3742;
+  --cell-shade: #161b21;
+  --rivet: #4a5361;
+  --shadow-overlay: 0 12px 32px rgb(0 0 0 / 0.45), 0 2px 6px rgb(0 0 0 / 0.3);
+  color-scheme: dark;
+}

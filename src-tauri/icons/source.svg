@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- A steel backup plate: a 3x3 grid of stamped cells, one in cobalt. -->
+  <rect x="64" y="64" width="896" height="896" rx="180" fill="#1B2027"/>
+  <rect x="112" y="112" width="800" height="800" rx="140" fill="#2A313B"/>
+  <g fill="#C9CED6">
+    <rect x="196" y="196" width="180" height="180" rx="36"/>
+    <rect x="422" y="196" width="180" height="180" rx="36"/>
+    <rect x="648" y="196" width="180" height="180" rx="36"/>
+    <rect x="196" y="422" width="180" height="180" rx="36"/>
+    <rect x="648" y="422" width="180" height="180" rx="36"/>
+    <rect x="196" y="648" width="180" height="180" rx="36"/>
+    <rect x="422" y="648" width="180" height="180" rx="36"/>
+    <rect x="648" y="648" width="180" height="180" rx="36"/>
+  </g>
+  <rect x="422" y="422" width="180" height="180" rx="36" fill="#4F6FE8"/>
+</svg>
